@@ -1,0 +1,2 @@
+# none-ls format command
+:lua vim.lsp.buf.format()
