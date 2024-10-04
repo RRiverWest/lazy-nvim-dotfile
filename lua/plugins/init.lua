@@ -7,4 +7,8 @@ return {
 		},
 		dependencies = { "MunifTanjim/nui.nvim" },
 	},
+	{
+		"weilbith/nvim-code-action-menu",
+		cmd = "CodeActionMenu",
+	},
 }
