@@ -14,19 +14,10 @@ return {
 			})
 		end,
 	},
+
 	{
 		"williamboman/mason.nvim",
-		lazy = false,
-		config = function()
-			require("mason").setup()
-		end,
-	},
-	{
 		"neovim/nvim-lspconfig",
-		lazy = false,
-		config = function()
-			require("lspconfig").lua_ls.setup({})
-			-- require("lspconfig").clangd.setup({})
-		end,
+		"williamboman/mason-lspconfig.nvim",
 	},
 }
