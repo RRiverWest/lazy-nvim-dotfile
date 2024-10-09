@@ -12,9 +12,6 @@ return {
             ['<Esc>'] = require('telescope.actions').close,
             ['q'] = require('telescope.actions').close,
           },
-          i = {
-            ['<C-g>'] = require('telescope.actions').close,
-          },
         },
       }
     })

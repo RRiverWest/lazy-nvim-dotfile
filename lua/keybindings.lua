@@ -28,6 +28,7 @@ map("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>")
 map("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
 map("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 map("n", "<Leader>fc", "<Cmd>Telescope commands<CR>")
+map("n", "<Leader>fc", "<Cmd>Telescope git_status<CR>")
 
 -- lazygit
 map("n","<leader>lg", "<Cmd>LazyGit<CR>",{ desc = "LazyGit"})
@@ -35,14 +36,15 @@ map("n","<leader>lg", "<Cmd>LazyGit<CR>",{ desc = "LazyGit"})
 -- lsp
 map("n", "<Plug>(lsp)f", "<Cmd>lua vim.lsp.buf.format()<CR>")
 map('n', 'K', "<Cmd>lua vim.lsp.buf.hover()<CR>")
-map('n', '<Plug>(lsp)r', "<Cmd>lua vim.lsp.buf.references()<CR>")
+-- map('n', '<Plug>(lsp)r', "<Cmd>lua vim.lsp.buf.references()<CR>")
+map('n', '<Plug>(lsp)r', "<Cmd>Telescope lsp_references<CR>")
 map('n', '<Plug>(lsp)d', "<Cmd>lua vim.lsp.buf.definition()<CR>")
 map('n', '<Plug>(lsp)D', "<Cmd>lua vim.lsp.buf.declaration()<CR>")
 map('n', '<Plug>(lsp)i', '<cmd>lua vim.lsp.buf.implementation()<CR>')
 map('n', '<Plug>(lsp)t', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
 map('n', '<Plug>(lsp)n', '<cmd>lua vim.lsp.buf.rename()<CR>')
-
-
+map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 
 
 
