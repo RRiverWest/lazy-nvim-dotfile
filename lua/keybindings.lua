@@ -5,8 +5,8 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.number = true
 
-map("n", "g", "<Plug>(lsp)")
 vim.g.mapleader = " "
+
 
 -- vim-tree
 map("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
@@ -28,25 +28,21 @@ map("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>")
 map("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
 map("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 map("n", "<Leader>fc", "<Cmd>Telescope commands<CR>")
-map("n", "<Leader>fc", "<Cmd>Telescope git_status<CR>")
+map("n", "<Leader>ft", "<Cmd>Telescope git_status<CR>")
+map("n", "<Leader>fk", "<Cmd>Telescope keymaps<CR>")
 
 -- lazygit
 map("n","<leader>lg", "<Cmd>LazyGit<CR>",{ desc = "LazyGit"})
 
 -- lsp
-map("n", "<Plug>(lsp)f", "<Cmd>lua vim.lsp.buf.format()<CR>")
-map('n', 'K', "<Cmd>lua vim.lsp.buf.hover()<CR>")
+map('n', 'K', "<Cmd>:Lspsage <CR>")
 -- map('n', '<Plug>(lsp)r', "<Cmd>lua vim.lsp.buf.references()<CR>")
-map('n', '<Plug>(lsp)r', "<Cmd>Telescope lsp_references<CR>")
-map('n', '<Plug>(lsp)d', "<Cmd>lua vim.lsp.buf.definition()<CR>")
-map('n', '<Plug>(lsp)D', "<Cmd>lua vim.lsp.buf.declaration()<CR>")
-map('n', '<Plug>(lsp)i', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-map('n', '<Plug>(lsp)t', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-map('n', '<Plug>(lsp)n', '<cmd>lua vim.lsp.buf.rename()<CR>')
+
+map("n", "gf", "<Cmd>lua vim.lsp.buf.format()<CR>")
+map("n", "K",  "<cmd>Lspsaga hover_doc<CR>")
+map('n', 'gd', "<Cmd>lua vim.lsp.buf.definition()<CR>")
+map('n', 'gD', "<Cmd>lua vim.lsp.buf.declaration()<CR>")
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+map('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-
-
-
-
-
