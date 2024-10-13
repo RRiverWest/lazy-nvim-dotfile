@@ -18,14 +18,14 @@ return {
 
 	-- lsp ui
 	{
-		'nvimdev/lspsaga.nvim',
+		"nvimdev/lspsaga.nvim",
 		config = function()
 			require('lspsaga').setup({})
 			-- require("lspsaga").init_lsp_saga()
 		end,
 		dependencies = {
-			'nvim-treesitter/nvim-treesitter', -- optional
-			'nvim-tree/nvim-web-devicons', -- optional
+			"nvim-treesitter/nvim-treesitter", -- optional
+			"nvim-tree/nvim-web-devicons", -- optional
 		}
 	},
 

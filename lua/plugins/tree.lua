@@ -1,9 +1,9 @@
 return {
 	{
-		'nvim-tree/nvim-tree.lua',
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		"nvim-tree/nvim-tree.lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require('nvim-tree').setup {
+			require("nvim-tree").setup {
 				-- 基本的な設定をここに記述します
 				view = {
 					width = 25, -- ツリーの幅
@@ -17,6 +17,6 @@ return {
 				},
 			}
 		end,
-		event = 'BufWinEnter',
+		event = "BufWinEnter",
 	}
 }
