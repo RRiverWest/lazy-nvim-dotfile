@@ -12,10 +12,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- require("lazy").setup({ spec = { { import = "plugins"}},})
 require("lazy").setup("plugins")
-
 require('keybindings')
 require('lsp')
 
+-- copy to clipboard
 vim.o.clipboard = "unnamedplus"

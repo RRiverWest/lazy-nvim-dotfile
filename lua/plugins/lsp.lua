@@ -10,6 +10,7 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-cmdline",
+		"onsails/lspkind.nvim",
 
 		"williamboman/mason.nvim",
 		"neovim/nvim-lspconfig",
@@ -25,7 +26,7 @@ return {
 		end,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter", -- optional
-			"nvim-tree/nvim-web-devicons", -- optional
+			"nvim-tree/nvim-web-devicons",  -- optional
 		}
 	},
 
