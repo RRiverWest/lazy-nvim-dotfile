@@ -1,8 +1,9 @@
 return {
 	"folke/tokyonight.nvim",
-	config = function ()
+	"rebelot/kanagawa.nvim",
+	"Mofiqul/dracula.nvim",
+	config = function()
 		-- colorscheme tokyonight
-		vim.cmd[[colorscheme tokyonight]]
+		vim.cmd([[colorscheme dracula]])
 	end,
-
 }
