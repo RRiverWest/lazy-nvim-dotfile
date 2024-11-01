@@ -16,5 +16,8 @@ require("lazy").setup("plugins")
 require('keybindings')
 require('lsp')
 
+-- colorscheme
+vim.cmd([[colorscheme dracula]])
+
 -- copy to clipboard
 vim.o.clipboard = "unnamedplus"
