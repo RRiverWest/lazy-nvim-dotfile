@@ -22,13 +22,13 @@ map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
--- telescope setting
+-- Telescope setting
 map("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>")
 map("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>")
 map("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
 map("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>")
 map("n", "<Leader>fc", "<Cmd>Telescope commands<CR>")
-map("n", "<Leader>ft", "<Cmd>Telescope git_status<CR>")
+map("n", "<Leader>ft", "<Cmd>Trlescope git_status<CR>")
 map("n", "<Leader>fk", "<Cmd>Telescope keymaps<CR>")
 
 -- lazygit

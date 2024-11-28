@@ -11,7 +11,7 @@ require("mason-lspconfig").setup_handlers({
 })
 
 local cmp = require("cmp")
-local lspkind = require('lspkind')
+local lspkind = require("lspkind")
 cmp.setup({
 	cmp.setup {
 		formatting = {

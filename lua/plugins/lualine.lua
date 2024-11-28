@@ -3,9 +3,9 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "auto", -- ここでテーマを設定できます
+				-- theme = "auto",
+				theme = "onelight",
 			},
 		})
 	end,
-	event = "VimEnter", -- このイベントでプラグインを読み込みます
 }
