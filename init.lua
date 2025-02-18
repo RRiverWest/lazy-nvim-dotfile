@@ -21,4 +21,3 @@ vim.cmd([[colorscheme dracula]])
 
 -- copy to clipboard
 vim.o.clipboard = "unnamedplus"
-
