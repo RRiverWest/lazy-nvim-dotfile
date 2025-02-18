@@ -1,13 +1,5 @@
 return {
 	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
-		dependencies = { "MunifTanjim/nui.nvim" },
-	},
-	{
 		"weilbith/nvim-code-action-menu",
 		cmd = "CodeActionMenu",
 	},
@@ -44,4 +36,5 @@ return {
 		end,
 		ft = { "markdown" },
 	},
+	{ "rust-lang/rust.vim" },
 }
