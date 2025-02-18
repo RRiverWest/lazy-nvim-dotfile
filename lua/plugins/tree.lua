@@ -4,16 +4,15 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("nvim-tree").setup {
-				-- 基本的な設定をここに記述します
 				view = {
-					width = 25, -- ツリーの幅
-					side = 'left', -- ツリーを表示する側
+					width = 25,
+					side = 'left',
 				},
 				renderer = {
-					highlight_opened_files = 'all', -- 開いたファイルをハイライト
+					highlight_opened_files = 'all',
 				},
 				filters = {
-					dotfiles = true, -- ドットファイルの表示設定
+					dotfiles = true,
 				},
 			}
 		end,
