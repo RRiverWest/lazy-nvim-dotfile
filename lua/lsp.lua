@@ -7,37 +7,37 @@ require("mason-lspconfig").setup({
 require("mason-lspconfig").setup_handlers({
 	function(server_name)
 		require("lspconfig")[server_name].setup({
-			capabilities = require("cmp_nvim_lsp").default_capabilities()
+			capabilities = require("cmp_nvim_lsp").default_capabilities(),
 		})
 	end,
 })
 
 lspconfig.rust_analyzer.setup({
-  settings = {
-    ["rust-analyzer"] = {
-      check = {
-        command = "clippy",
-      },
-    },
-  },
+	settings = {
+		["rust-analyzer"] = {
+			check = {
+				command = "clippy",
+			},
+		},
+	},
 })
 
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 cmp.setup({
-	cmp.setup {
+	cmp.setup({
 		formatting = {
 			format = lspkind.cmp_format({
-				mode = 'symbol',
+				mode = "symbol",
 				maxwidth = 50,
-				ellipsis_char = '...',
+				ellipsis_char = "...",
 				show_labelDetails = true,
 				before = function(entry, vim_item)
 					return vim_item
-				end
-			})
-		}
-	},
+				end,
+			}),
+		},
+	}),
 	snippet = {
 		expand = function(args)
 			vim.fn["vsnip#anonymous"](args.body)
@@ -47,22 +47,22 @@ cmp.setup({
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<Tab>"] = cmp.mapping.select_next_item(),
-		['<C-c>'] = cmp.mapping.complete(),
-		['<C-e>'] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm { select = true },
+		["<C-c>"] = cmp.mapping.complete(),
+		["<C-e>"] = cmp.mapping.abort(),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	}),
-	sources = cmp.config.sources {
+	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "buffer" },
 		{ name = "path" },
-	},
+	}),
 })
 
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
-	}
+		{ name = "buffer" },
+	},
 })
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
