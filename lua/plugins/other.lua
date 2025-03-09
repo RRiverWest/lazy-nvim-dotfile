@@ -19,6 +19,7 @@ return {
 		end,
 	},
 	{
+		-- 括弧のプラグイン
 		"kylechui/nvim-surround",
 		version = "*",
 		-- event = "VeryLazy",
@@ -26,7 +27,10 @@ return {
 			require("nvim-surround").setup()
 		end,
 	},
-	{ "cohama/lexima.vim" },
+	{
+		-- 閉じ括弧補完
+		"cohama/lexima.vim",
+	},
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
