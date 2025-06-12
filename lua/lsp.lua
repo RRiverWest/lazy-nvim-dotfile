@@ -1,26 +1,23 @@
 local lspconfig = require("lspconfig")
 
 require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "pylsp" },
-})
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		require("lspconfig")[server_name].setup({
-			capabilities = require("cmp_nvim_lsp").default_capabilities(),
-		})
-	end,
-})
 
-lspconfig.rust_analyzer.setup({
-	settings = {
-		["rust-analyzer"] = {
-			check = {
-				command = "clippy",
-			},
-		},
-	},
+vim.lsp.config('*', {
+	capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
+-- vim.lsp.enable('lua_ls')
+
+require("mason-lspconfig").setup()
+
+-- lspconfig.rust_analyzer.setup({
+-- 	settings = {
+-- 		["rust-analyzer"] = {
+-- 			check = {
+-- 				command = "clippy",
+-- 			},
+-- 		},
+-- 	},
+-- })
 
 local cmp = require("cmp")
 local lspkind = require("lspkind")
