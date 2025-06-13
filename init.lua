@@ -17,8 +17,8 @@ require('keybindings')
 require('lsp')
 
 vim.opt.relativenumber = true
-vim.opt.helplang ='ja'
-vim.opt.whichwrap ='h,l,[,]'
+vim.opt.helplang = 'ja'
+vim.opt.whichwrap = 'h,l,[,]'
 
 -- colorscheme
 vim.cmd([[colorscheme dracula]])
