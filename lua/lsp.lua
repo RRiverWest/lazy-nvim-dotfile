@@ -1,11 +1,8 @@
-local lspconfig = require("lspconfig")
-
 require("mason").setup()
 
 vim.lsp.config('*', {
 	capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
--- vim.lsp.enable('lua_ls')
 
 require("mason-lspconfig").setup()
 
