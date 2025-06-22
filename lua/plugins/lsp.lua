@@ -15,19 +15,30 @@ return {
 		"williamboman/mason.nvim",
 		"neovim/nvim-lspconfig",
 		"williamboman/mason-lspconfig.nvim",
+		"aznhe21/actions-preview.nvim",
 	},
-
-	-- lsp ui
 	{
-		"nvimdev/lspsaga.nvim",
+		'nvimdev/lspsaga.nvim',
 		config = function()
 			require('lspsaga').setup({})
-			-- require("lspsaga").init_lsp_saga()
 		end,
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter", -- optional
-			"nvim-tree/nvim-web-devicons",  -- optional
+			'nvim-treesitter/nvim-treesitter', -- optional
+			'nvim-tree/nvim-web-devicons',   -- optional
 		}
-	},
+	}                                    -- {
+	-- 	"aznhe21/actions-preview.nvim",
+	-- 	config = function()
+	-- 		vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+	-- 	end,
+	-- }
 
+	-- lsp ui
+	-- {
+	--   "jinzhongjia/LspUI.nvim",
+	--   branch = "main",
+	-- 	config = function()
+	-- 		config = true,
+	-- 	end
+	-- }
 }
