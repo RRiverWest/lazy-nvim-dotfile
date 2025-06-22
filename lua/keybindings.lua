@@ -32,17 +32,18 @@ map("n", "<Leader>ft", "<Cmd>Trlescope git_status<CR>")
 map("n", "<Leader>fk", "<Cmd>Telescope keymaps<CR>")
 
 -- lazygit
-map("n","<leader>lg", "<Cmd>LazyGit<CR>",{ desc = "LazyGit"})
+map("n", "<leader>la", "<Cmd>LazyGit<CR>", { desc = "LazyGit" })
 
 -- lsp
 -- map('n', '<Plug>(lsp)r', "<Cmd>lua vim.lsp.buf.references()<CR>")
 
+
 map("n", "gf", "<Cmd>lua vim.lsp.buf.format()<CR>")
-map("n", "K",  "<cmd>Lspsaga hover_doc<CR>")
+map("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
 map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 map("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>")
-map("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+map("n", "ga", require("actions-preview").code_actions)
 map("n", "gr", "<cmd>Telescope lsp_references<CR>")
