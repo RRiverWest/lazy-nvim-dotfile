@@ -13,15 +13,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-require('keybindings')
-require('lsp')
+require("keybindings")
+require("lsp")
 
 vim.opt.relativenumber = true
-vim.opt.helplang = 'ja'
-vim.opt.whichwrap = 'h,l,[,]'
+vim.opt.helplang = "ja"
+vim.opt.whichwrap = "h,l,[,]"
+
+vim.o.mousemoveevent = true
+-- vim.opt.termguicolors = true
 
 -- colorscheme
-vim.cmd([[colorscheme dracula]])
+vim.cmd([[colorscheme nightfox]])
 
 -- copy to clipboard
 vim.o.clipboard = "unnamedplus"
