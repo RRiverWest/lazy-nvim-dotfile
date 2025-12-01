@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 
 -- buffer line
 map("n", "<Leader>bb", ":BufferLinePick<CR>", { desc = "Buffer Line Pick" })
-map("n", "<Leader>bd", ":BufferLinePickClose<CR>", { desc = "Buffer Line Pick Close" })
+map("n", "<Leader>bc", ":BufferLinePickClose<CR>", { desc = "Buffer Line Pick Close" })
 map("n", "<leader>b1", ":BufferLineGoToBuffer 1<CR>", { desc = "Buffer Line Go To Buffer 1" })
 map("n", "<leader>b2", ":BufferLineGoToBuffer 2<CR>", { desc = "Buffer Line Go To Buffer 2" })
 map("n", "<leader>b3", ":BufferLineGoToBuffer 3<CR>", { desc = "Buffer Line Go To Buffer 3" })
@@ -49,6 +49,7 @@ map("n", "<leader>la", "<Cmd>LazyGit<CR>", { desc = "LazyGit" })
 -- lsp
 -- map('n', '<Plug>(lsp)r', "<Cmd>lua vim.lsp.buf.references()<CR>")
 
+map('i', '<C-S>', '<Nop>', { noremap = true, silent = true })
 
 map("n", "gf", "<Cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format file" })
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Show hover doc" })
@@ -57,5 +58,5 @@ map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 map("n", "gn", "<cmd>lua vim.lsp.buf.rename()<CR>", {desc = "Rename symbol"})
-map("n", "gra", require("actions-preview").code_actions, { desc = "Code actions" })
+-- map("n", "gra", require("actions-preview").code_actions, { desc = "Code actions" })
 map("n", "gr", "<cmd>Telescope lsp_references<CR>")
