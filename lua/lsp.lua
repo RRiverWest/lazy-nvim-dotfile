@@ -1,10 +1,16 @@
 require("mason").setup()
 
-vim.lsp.config('*', {
-	capabilities = require('cmp_nvim_lsp').default_capabilities(),
+vim.lsp.config("*", {
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"lua_ls",
+		"ts_ls",
+		"stylua"
+	},
+})
 
 -- lspconfig.rust_analyzer.setup({
 -- 	settings = {
