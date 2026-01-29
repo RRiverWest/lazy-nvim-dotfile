@@ -16,17 +16,27 @@ return {
 		"neovim/nvim-lspconfig",
 		"williamboman/mason-lspconfig.nvim",
 		"aznhe21/actions-preview.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" },
 	},
 	{
-		'nvimdev/lspsaga.nvim',
+		"nvimdev/lspsaga.nvim",
 		config = function()
-			require('lspsaga').setup({})
+			require("lspsaga").setup({
+				lightbulb = {
+					enable = true,
+					sign = false,
+				},
+				symbol = {
+					in_cursor = false, -- カーソル下のシンボルハイライトを無効化
+				},
+
+			})
 		end,
 		dependencies = {
-			'nvim-treesitter/nvim-treesitter', -- optional
-			'nvim-tree/nvim-web-devicons',   -- optional
-		}
-	}                                    -- {
+			"nvim-treesitter/nvim-treesitter", -- optional
+			"nvim-tree/nvim-web-devicons",  -- optional
+		},
+	},                                  -- {
 	-- 	"aznhe21/actions-preview.nvim",
 	-- 	config = function()
 	-- 		vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
