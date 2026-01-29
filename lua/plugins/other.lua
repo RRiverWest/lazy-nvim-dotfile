@@ -1,24 +1,5 @@
 return {
 	{
-		"weilbith/nvim-code-action-menu",
-		cmd = "CodeActionMenu",
-	},
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			vim.opt.termguicolors = true
-			require("bufferline").setup({})
-		end,
-	},
-	{
-		"dinhhuy258/git.nvim",
-		config = function()
-			require("git").setup()
-		end,
-	},
-	{
 		-- 括弧のプラグイン
 		"kylechui/nvim-surround",
 		version = "*",
@@ -27,6 +8,14 @@ return {
 			require("nvim-surround").setup()
 		end,
 	},
+	-- {
+	-- 	"eraserhd/parinfer-rust",
+	-- 	config = function()
+	-- 		require("lazy").setup({
+	-- 			-- { "eraserhd/parinfer-rust", build = "cargo build --release" }
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		-- 閉じ括弧補完
 		"cohama/lexima.vim",
@@ -34,11 +23,46 @@ return {
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && yarn install",
+		build = "cd app && npm install",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" },
 	},
-	{ "rust-lang/rust.vim" },
+	-- { "rust-lang/rust.vim" },
+	{
+		"vim-jp/vimdoc-ja",
+	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "VeryLazy", -- Or `LspAttach`
+		priority = 1000,  -- needs to be loaded in first
+		config = function()
+			require("tiny-inline-diagnostic").setup({
+				-- Available options:
+				-- "modern", "classic", "minimal", "powerline",
+				-- "ghost", "simple", "nonerdfont", "amongus"
+				preset = "powerline",
+
+				options = {
+					-- Display the source of the diagnostic (e.g., basedpyright, vsserver, lua_ls etc.)
+					show_source = {
+						enabled = true,
+						if_many = false,
+					},
+					multilines = {
+						enabled = true,
+						always_show = false,
+					},
+				},
+			})
+			vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
+		end,
+	},
+	{
+		"Zeioth/hot-reload.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
+		event = "BufEnter",
+		opts = {}
+	}
 }
