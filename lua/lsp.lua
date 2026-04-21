@@ -4,6 +4,35 @@ vim.lsp.config("*", {
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 
+vim.lsp.config("texlab", {
+  settings = {
+    texlab = {
+      auxDirectory = ".",
+      -- ★ これが効くことがある
+			bibtexFormatter = "latexindent",
+      latexFormatter = "latexindent",
+      diagnosticsDelay = 300,
+
+      build = {
+        executable = "latexmk",
+        args = {
+          "-pdf",
+          "-pdflatex=lualatex",
+          "-interaction=nonstopmode",
+          "-synctex=1",
+          "%f",
+        },
+        onSave = true,
+      },
+
+      chktex = {
+        onOpenAndSave = true,
+        onEdit = true,
+      },
+    },
+  },
+})
+
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
